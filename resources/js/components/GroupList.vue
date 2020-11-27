@@ -8,6 +8,7 @@
 						<ul class="list-unstyled" v-if="group.tasks.length">
 							<li
 								v-for="task in group.tasks.slice(0, 3)"
+								:class="{'text-decoration-line-through text-muted': task.completed}"
 								:key="task.id"
 								v-text="task.value"
 							></li>
@@ -37,3 +38,9 @@ export default {
 	},
 };
 </script>
+
+<style>
+.text-decoration-line-through {
+	text-decoration: line-through;
+}
+</style>
